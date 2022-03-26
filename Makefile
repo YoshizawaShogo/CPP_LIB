@@ -47,6 +47,8 @@ run: all
 $(program): $(OBJS)
 	$(MAKE) -C $(LIBDIR)
 	$(CXX) -o $@ $^ $(LDFLAGS) $(LIBS)
+	@echo --*----------------------------*--
+	@echo
 $(OBJS): build/%.o: $(CXXSRCDIR)/%.cpp
 	$(CXX) $(CFLAGS) -c -o $@ $(filter %.cpp,$^) -MF $(patsubst %.o,%.d,$@)
 
