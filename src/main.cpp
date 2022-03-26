@@ -1,7 +1,6 @@
-//#include <iostream>
-#include "myfunc.h"
+#include "hello_world.h"
 
 int main (void){
-    hello();
+    hello_world();
     return 0;
 }
