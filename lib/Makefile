@@ -14,7 +14,7 @@ DEPE := $(OBJS:%.o=%.d)
 ARCHIVE := libmy.a
 
 CXX := g++
-CFLAGS := -O2 -MMD
+CFLAGS := -O2 -g -MMD
 
 # allとcleanはファイルではなくターゲットであると宣言する
 .PHONY: all clean
