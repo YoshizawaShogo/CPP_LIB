@@ -11,7 +11,7 @@ namespace my_lib {
         }
         return vec;
     }
-
+    
     std::vector<double> random_double_vector(uint32_t length, double range_min, double range_max, int32_t random_seed)
     {
         std::vector<double> vec;
