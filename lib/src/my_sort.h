@@ -76,7 +76,7 @@ namespace my_lib {
         {
             for (uint32_t j = 0; j < iter_length - i - 1; ++j)
             {
-                if (comp(iter_begin[j], iter_begin[j+1])) std::swap(iter_begin[j], iter_begin[j+1]);
+                if (iter_begin[j] < iter_begin[j+1]) std::swap(iter_begin[j], iter_begin[j+1]);
             }
         }
     }
@@ -108,6 +108,28 @@ namespace my_lib {
                 if (iter_begin[j] < iter_begin[select_index]) select_index = j;
             }
             std::swap(iter_begin[select_index], iter_begin[iter_length - i -1]);
+        }
+    }
+
+    template <typename iterator>
+    void insertion_sort(iterator iter_begin, iterator iter_end)
+    {
+        // コピペ: https://www.geeksforgeeks.org/insertion-sort/
+        uint32_t iter_length = iter_end - iter_begin;
+        
+        int i;
+        int key;
+        int j;
+        for (i = 1; i < iter_length; i++)
+        {
+            key = iter_begin[i];
+            j = i - 1;
+            while (j >= 0 && iter_begin[j] > key)
+            {
+                iter_begin[j + 1] = iter_begin[j];
+                j = j - 1;
+            }
+            iter_begin[j + 1] = key;
         }
     }
 }
